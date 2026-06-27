@@ -1,0 +1,1 @@
+All practicals og AWDP
