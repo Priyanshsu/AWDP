@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Practical 4 - Video & Image Hover</title>
+  <style>
+    .video-container {
+      text-align: center;
+      margin: 20px;
+    }
+    video {
+      width: 500px;
+      border: 3px solid #333;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Image Hover Effect */
+    .img-container {
+      display: inline-block;
+      margin: 20px;
+      overflow: hidden;
+    }
+    .img-container img {
+      width: 200px;
+      height: 150px;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+    .img-container img:hover {
+      transform: scale(1.2);
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center;">Video Positioning</h2>
+  <div class="video-container">
+    <!-- Use any local or online video -->
+    <video controls>
+      <source src="sample.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <h2 style="text-align:center;">Image Hover Effect</h2>
+  <div style="text-align:center;">
+    <div class="img-container">
+      <img src="https://picsum.photos/200/150?random=1" alt="Image 1">
+    </div>
+    <div class="img-container">
+      <img src="https://picsum.photos/200/150?random=2" alt="Image 2">
+    </div>
+  </div>
+</body>
+</html>

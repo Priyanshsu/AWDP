@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head><title>Practical 5 - JavaScript Basics</title></head>
+<body>
+  <h2>JavaScript: Variables, Loops & Conditionals</h2>
+  <button onclick="runDemo()">Run Demo</button>
+  <div id="output" style="background:#f0f0f0; padding:15px; margin-top:10px;"></div>
+
+  <script>
+    function runDemo() {
+      let output = "";
+
+      // Variables with different data types
+      let name = "Alice";
+      let age = 20;
+      let gpa = 8.5;
+      let isStudent = true;
+
+      output += `<b>Variables:</b><br>`;
+      output += `Name: ${name}, Age: ${age}, GPA: ${gpa}, Student: ${isStudent}<br><br>`;
+
+      // Conditional Statement
+      output += `<b>Conditional:</b><br>`;
+      if (age >= 18) {
+        output += `${name} is an adult.<br><br>`;
+      } else {
+        output += `${name} is a minor.<br><br>`;
+      }
+
+      // For Loop
+      output += `<b>For Loop (1 to 5):</b><br>`;
+      for (let i = 1; i <= 5; i++) {
+        output += `i = ${i}<br>`;
+      }
+
+      // While Loop
+      output += `<br><b>While Loop (Even numbers 2-10):</b><br>`;
+      let n = 2;
+      while (n <= 10) {
+        output += `${n} `;
+        n += 2;
+      }
+
+      document.getElementById("output").innerHTML = output;
+    }
+  </script>
+</body>
+</html>

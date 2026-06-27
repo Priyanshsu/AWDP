@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Practical 7 - Form Validation</title>
+  <style>
+    .error { color: red; font-size: 13px; }
+    input { margin: 5px; padding: 5px; width: 250px; }
+    label { display: inline-block; width: 120px; }
+  </style>
+</head>
+<body>
+  <h2>Registration Form Validation</h2>
+  <form onsubmit="return validateForm()">
+    <label>Name:</label>
+    <input type="text" id="name">
+    <span class="error" id="nameErr"></span><br>
+
+    <label>Email:</label>
+    <input type="text" id="email">
+    <span class="error" id="emailErr"></span><br>
+
+    <label>Phone:</label>
+    <input type="text" id="phone">
+    <span class="error" id="phoneErr"></span><br>
+
+    <label>Password:</label>
+    <input type="password" id="password">
+    <span class="error" id="passErr"></span><br>
+
+    <label>Pincode:</label>
+    <input type="text" id="pin">
+    <span class="error" id="pinErr"></span><br><br>
+
+    <button type="submit">Submit</button>
+    <span id="success" style="color:green;"></span>
+  </form>
+
+  <script>
+    function validateForm() {
+      let valid = true;
+
+      // Name: only letters and spaces, min 3 chars
+      let name = document.getElementById("name").value;
+      if (!/^[A-Za-z\s]{3,}$/.test(name)) {
+        document.getElementById("nameErr").innerText = "Enter valid name (letters only, min 3 chars)";
+        valid = false;
+      } else { document.getElementById("nameErr").innerText = ""; }
+
+      // Email
+      let email = document.getElementById("email").value;
+      if (!/^[\w.-]+@[\w.-]+\.\w{2,}$/.test(email)) {
+        document.getElementById("emailErr").innerText = "Enter valid email";
+        valid = false;
+      } else { document.getElementById("emailErr").innerText = ""; }
+
+      // Phone: exactly 10 digits
+      let phone = document.getElementById("phone").value;
+      if (!/^\d{10}$/.test(phone)) {
+        document.getElementById("phoneErr").innerText = "Phone must be 10 digits";
+        valid = false;
+      } else { document.getElementById("phoneErr").innerText = ""; }
+
+      // Password: min 6 chars, at least 1 number
+      let pass = document.getElementById("password").value;
+      if (!/^(?=.*\d).{6,}$/.test(pass)) {
+        document.getElementById("passErr").innerText = "Min 6 chars, at least 1 digit";
+        valid = false;
+      } else { document.getElementById("passErr").innerText = ""; }
+
+      // Pincode: exactly 6 digits
+      let pin = document.getElementById("pin").value;
+      if (!/^\d{6}$/.test(pin)) {
+        document.getElementById("pinErr").innerText = "Pincode must be 6 digits";
+        valid = false;
+      } else { document.getElementById("pinErr").innerText = ""; }
+
+      if (valid) {
+        document.getElementById("success").innerText = "Form submitted successfully!";
+      }
+      return false; // prevent actual submission
+    }
+  </script>
+</body>
+</html>

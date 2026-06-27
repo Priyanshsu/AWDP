@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Practical 2 - CSS Selectors</title>
+  <style>
+    /* Element selector */
+    p { color: black; }
+
+    /* Class selector */
+    .highlight { background-color: yellow; font-weight: bold; }
+
+    /* ID selector */
+    #main-title { color: darkgreen; font-size: 28px; }
+
+    /* Descendant selector */
+    div p { font-style: italic; }
+
+    /* Grouping selector */
+    h2, h3 { color: purple; }
+
+    /* Pseudo-class */
+    a:hover { color: red; text-decoration: none; }
+
+    /* Attribute selector */
+    input[type="text"] { border: 2px solid blue; padding: 5px; }
+  </style>
+</head>
+<body>
+  <h1 id="main-title">CSS Selectors Demo</h1>
+  <h2>Section 1</h2>
+  <p class="highlight">This paragraph has a class selector applied.</p>
+  <div>
+    <p>This paragraph is inside a div (descendant selector).</p>
+  </div>
+  <h3>Links</h3>
+  <a href="#">Hover over me!</a>
+  <br><br>
+  <input type="text" placeholder="Text input with attribute selector">
+</body>
+</html>
